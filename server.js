@@ -1,6 +1,7 @@
 const express = require("express");
 const logger = require("morgan");
 const mongoose = require("mongoose");
+const Workout = require('./models/workout');
 
 const PORT = process.env.PORT || 3000;
 
@@ -16,7 +17,9 @@ app.use(express.static("public"));
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/userdb", { 
     useNewUrlParser: true,
     useFindAndModify: false,
-    useUnifiedTopology: true, 
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+
 });
 
 // require apiRoutes & htmlRoutes

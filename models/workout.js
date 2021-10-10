@@ -21,7 +21,8 @@ const WorkoutSchema = new Schema({
         required: "Name is Required"
     },
     duration: {
-        type: Number
+        type: Number,
+        toJSON:{virtuals: true},
     },
     weight: {
         type: Number
@@ -36,7 +37,8 @@ const WorkoutSchema = new Schema({
         type: Number
     }
       }]
-});
+
+    });
 
 const Workout = mongoose.model("workout", WorkoutSchema);
 

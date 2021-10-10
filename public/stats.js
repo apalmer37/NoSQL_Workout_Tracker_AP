@@ -43,7 +43,7 @@ function populateChart(data) {
           backgroundColor: 'red',
           borderColor: 'red',
           data: durations,
-          fill: false,
+          fill: true,
         },
       ],
     },
