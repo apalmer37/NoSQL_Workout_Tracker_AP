@@ -1,6 +1,7 @@
-const express = require("express");
-const logger = require("morgan");
-const mongoose = require("mongoose");
+const express = require('express');
+const path = require('path')
+const logger = require('morgan');
+const mongoose = require('mongoose');
 const Workout = require('./models/workout');
 
 const PORT = process.env.PORT || 3000;
@@ -21,6 +22,7 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/userdb", {
     useCreateIndex: true,
 
 });
+
 
 // require apiRoutes & htmlRoutes
 require("./routes/apiRoutes")(app);

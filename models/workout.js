@@ -22,7 +22,7 @@ const WorkoutSchema = new Schema({
     },
     duration: {
         type: Number,
-        toJSON:{virtuals: true},
+        required: "Duration is required"
     },
     weight: {
         type: Number
