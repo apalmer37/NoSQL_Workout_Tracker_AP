@@ -21,7 +21,8 @@ module.exports = function(app){
 
     // use app.get to find the last workout added
     app.get("/api/workouts/", (req, res) => {
-        db.Workout.find({})
+        db.Workout
+        .find({})
         .then(workoutData =>{
         res.json(workoutData);
         })
